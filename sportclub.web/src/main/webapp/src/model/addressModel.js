@@ -32,6 +32,44 @@ define(['model/_addressModel'], function() {
 
  	validate: function(attrs,options){
             var validationMessage = "";
+            
+                        //TODO Ninguno de los campos debe ser vacío
+            var validationMessage = "";
+            
+            if(!attrs.street){
+                validationMessage = "The Street can't be empty";
+            }
+            if(!attrs.aveneu)
+            {
+                validationMessage = "The Aveneu can't be empty";
+            }
+            if(!attrs.cityId)
+            {
+                validationMessage = "The City Id can't be empty";
+            }
+            //TODO Los campos Street y Avenue deben ser números
+            
+            if(isNaN(attrs.street))
+            {
+                validationMessage = "The Street must be a number";
+            }
+            if(isNaN(attrs.aveneu))
+            {
+                validationMessage = "The Aveneu must be a number";
+            }
+            
+            //TODO Dichos números no deben tener más de tres dígitos
+            
+            if((attrs.street).length > 3)
+            {
+                validationMessage = "The Street number must not exceed 3 digits";
+            }
+            if((attrs.aveneu).length > 3)
+            {
+                validationMessage = "The Aveneu number must not exceed 3 digits";
+            }            
+            
+            //TODO Se debe especificar el país de la dirección
             if(validationMessage.length>0){
                return validationMessage;
             }
