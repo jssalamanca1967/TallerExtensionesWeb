@@ -41,7 +41,7 @@ define(['model/_memberModel'], function() {
                 //Retorna true si la fecha ingresada es mayor o igual a la actual
                 
                 
-                var fechaActual = new Date()
+                var fechaActual = new Date();
                 var diaActual = fechaActual.getDate();
                 var mmActual = fechaActual.getMonth() + 1;
                 var yyyyActual = fechaActual.getFullYear();
