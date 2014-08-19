@@ -115,14 +115,14 @@
 <!-- Aqui se renderizan los modelos existentes en el modelo de la lista sports. Note el uso de javascript en el interior de los tags <% %> (en este caso un bucle que toma cada ítem de la lista ‘sports’). La variable ‘sports’ será instanciada por el controlador (se verá más adelante) -->
     <% _.each(sports, function(sport) { %>
 <!-- Se hace un nuevo <tr> por cada elemento en la lista-->
-    <% if(htmlEncode(sport.getDisplay('average')) > 60){ %>
+    <% if(htmlEncode(sport.getDisplay('average')) > 17){ %>
     <tr>
             <td><%= htmlEncode(sport.getDisplay('name')) %></td>
             <!-- esta instrucción indica qué campo del elemento actual del bucle se debe mostrar en ese lugar (cada <td> es una columna)>  -->
             <td><%= htmlEncode(sport.getDisplay('average')) %></td>
     </tr>
     <% } else { %>
-    <tr class="warning">}
+    <tr class="warning">
             <td><%= htmlEncode(sport.getDisplay('name')) %></td>
             <!-- esta instrucción indica qué campo del elemento actual del bucle se debe mostrar en ese lugar (cada <td> es una columna)>  -->
             <td><%= htmlEncode(sport.getDisplay('average')) %></td>
