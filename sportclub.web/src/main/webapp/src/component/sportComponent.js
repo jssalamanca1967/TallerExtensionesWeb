@@ -38,7 +38,7 @@ define(['component/_CRUDComponent', 'controller/toolbarController',
             var self = this;
             this.addButton({name: "Promedio", icon: "glyphicon-stats", }, function() {
                  self.componentController.sportPromedio();
-});
+             });
         }
     });
     return App.Component.SportComponent;
