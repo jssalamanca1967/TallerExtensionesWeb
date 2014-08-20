@@ -7,6 +7,7 @@
 		 <th>Nombre</th>
 		 <th>Fecha inicio</th>
 		 <th>Fecha final</th>
+                 <th>Calcular costo</th>
     <th>Acciones</th>
     </tr>
     </thead>
@@ -16,6 +17,8 @@
 		<td><%= htmlEncode(championShip.getDisplay('name')) %></td>
 		<td><%= htmlEncode(championShip.getDisplay('startDate')) %></td>
 		<td><%= htmlEncode(championShip.getDisplay('endDate')) %></td>
+        <td><a onclick="Backbone.trigger('<%= componentId %>-championShip-show-cost',{startDate:<%= htmlEncode(championShip.getDisplay('startDate')) %>,endDate:<%= htmlEncode(championShip.getDisplay('endDate')) %>}); return false;" >Ver duracion/costo total</a></td>
+
     <td>
     <% if(showEdit) {%>
     <a onclick="Backbone.trigger('<%= componentId %>-championShip-edit',{id:<%= championShip.id %>}); return false" >Editar</a> |
@@ -41,7 +44,8 @@
 		<label for="name">Name</label>
     	<input type="text" class="form-control" id="name" name="name" placeholder="Enter value" value="<%= championShip.get('name') %>"/>	
 		</div>
-		<div class="form-group" >
+	
+            <div class="form-group" >
 			<label for="startDate">Start Date</label>
     		<input type="text" data-converter="date" data-date-format="dd/mm/yyyy" class="form-control" id="startDate"  name="startDate" placeholder="Enter value" />
     		<%= '<scr'+'ipt>' %>
@@ -49,7 +53,8 @@
         	$('#startDate').datepicker('setDate',App.Utils.Converter.date.toDate("<%= championShip.get('startDate') %>"));
     		<%= '</scr'+'ipt>' %>
 		</div>
-		<div class="form-group" >
+        
+            <div class="form-group" >
 			<label for="endDate">End Date</label>
     		<input type="text" data-converter="date" data-date-format="dd/mm/yyyy" class="form-control" id="endDate"  name="endDate" placeholder="Enter value" />
     		<%= '<scr'+'ipt>' %>

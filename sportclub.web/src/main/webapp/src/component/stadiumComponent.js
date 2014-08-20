@@ -34,7 +34,10 @@ define(['component/_CRUDComponent', 'controller/toolbarController', 'model/toolb
         listModel: App.Model.StadiumList,
         controller : App.Controller.StadiumController,
         postInit: function(){
-            var self = this;            
+            var self = this;
+            this.toolbarModel.set('showPrint', false);
+            this.toolbarModel.set('showSearch', false);
+           
             Backbone.on(self.componentId + '-stadium-show-classification', function(params) {
                 self.componentController.classification(params);
             });
