@@ -39,6 +39,9 @@ define(['component/_CRUDComponent', 'controller/toolbarController',
             this.addButton({name: "Promedio", icon: "glyphicon-stats", }, function() {
                  self.componentController.sportPromedio();
              });
+            Backbone.on(self.componentId + '-sport-show-average', function(params) {
+                self.componentController.average(params);
+            });
         }
     });
     return App.Component.SportComponent;
